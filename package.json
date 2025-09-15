@@ -1,0 +1,44 @@
+{
+  "name": "iq-promotions",
+  "version": "1.0.2",
+  "description": "Promotions analysis software for IQuasar",
+  "main": "entry.js",
+  "type": "module",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.iquasar.promotions",
+    "productName": "iQ Promotions",
+    "directories": {
+      "buildResources": "assets",
+      "output": "build"
+    },
+    "files": [
+      "entry.js",
+      "config.js",
+      "assets/",
+      "client/",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/.*",
+      "!**/test/**"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.png"
+    },
+    "extraResources": [
+      {
+        "from": "assets",
+        "to": "assets"
+      }
+    ]
+  },
+  "author": "Haseeb Parvaiz Qureshi",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^36.4.0",
+    "electron-builder": "^26.0.12"
+  }
+}

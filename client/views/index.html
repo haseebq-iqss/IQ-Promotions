@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ Promotions</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styling/styles.css">
+    <meta name="author" content="Haseeb Qureshi">
+    <meta name="description"
+        content="Upload quarterly performance data and employee base file to generate promotion analysis">
+    <meta name="keywords"
+        content="IQ Promotions, Performance Data, Employee Base, Promotion Analysis, File Upload, Data Processing, CSV, Excel, Word">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>IQ Promotions</h1>
+            <p>Upload quarterly performance data and employee base file to generate promotion analysis</p>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Use This System</h3>
+            <div class="instruction-grid">
+                <div class="instruction-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Prepare Files</h4>
+                        <p>Q2, Q3, Q4 performance data and Employee Base file</p>
+                    </div>
+                </div>
+                <div class="instruction-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Upload Data</h4>
+                        <p>Upload all 4 files using the upload sections below</p>
+                    </div>
+                </div>
+                <div class="instruction-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Process & Edit</h4>
+                        <p>Click "Process Files" and edit highlighted fields</p>
+                    </div>
+                </div>
+                <div class="instruction-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Export Results</h4>
+                        <p>Export final data in CSV, Excel, or Word format</p>
+                    </div>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Note:</strong> Files are matched by Email ID. Excel serial dates are automatically converted to
+                DD/MM/YYYY format.
+            </div>
+        </div>
+
+        <div class="upload-section">
+            <h2>File Upload</h2>
+            <div class="file-grid">
+                <div class="file-upload" id="q2-upload">
+                    <input type="file" id="q2-file" accept=".csv,.xlsx,.xls,.xlsm,.ods" />
+                    <label for="q2-file">
+                    <div class="upload-icon">📊</div>
+                        <strong>Q1 Performance Data</strong>
+                        <span>Click to upload CSV/Excel/ODS file</span>
+                    </label>
+                </div>
+                <div class="file-upload" id="q3-upload">
+                    <input type="file" id="q3-file" accept=".csv,.xlsx,.xls,.xlsm,.ods" />
+                    <label for="q3-file">
+                        <div class="upload-icon">📈</div>
+                        <strong>Q2 Performance Data</strong>
+                        <span>Click to upload CSV/Excel/ODS file</span>
+                    </label>
+                </div>
+                <div class="file-upload" id="q4-upload">
+                    <input type="file" id="q4-file" accept=".csv,.xlsx,.xls,.xlsm,.ods" />
+                    <label for="q4-file">
+                        <div class="upload-icon">📋</div>
+                        <strong>Q3 Performance Data</strong>
+                        <span>Click to upload CSV/Excel/ODS file</span>
+                    </label>
+                </div>
+                <div class="file-upload" id="base-upload">
+                    <input type="file" id="base-file" accept=".csv,.xlsx,.xls,.xlsm,.ods" />
+                    <label for="base-file">
+                        <div class="upload-icon">👥</div>
+                        <strong>Employee View / Base File</strong>
+                        <span>Click to upload CSV/Excel/ODS file</span>
+                    </label>
+                </div>
+            </div>
+            <div class="progress" id="progress" style="display:none;">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div id="status"></div>
+            <button class="btn btn-primary" onclick="processFiles()" id="process-btn" disabled>
+                <span>Process Files</span>
+            </button>
+        </div>
+
+        <div class="data-section" id="data-section">
+            <div class="section-header">
+                <h2>Promotion Analysis Data</h2>
+                <div class="export-buttons">
+                    <button class="btn btn-outline" onclick="exportData('csv')">
+                        <span>CSV</span>
+                    </button>
+                    <button class="btn btn-outline" onclick="exportData('xlsx')">
+                        <span>Excel</span>
+                    </button>
+                    <button class="btn btn-outline" onclick="exportData('docx')">
+                        <span>Word</span>
+                    </button>
+                </div>
+            </div>
+            <div class="table-container">
+                <table id="results-table">
+                    <thead id="table-header"></thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../client_logic/index.js"></script>
+</body>
+
+</html>
