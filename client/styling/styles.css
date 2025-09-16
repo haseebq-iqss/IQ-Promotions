@@ -3,6 +3,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  animation: startup-animation 0.75s ease-out;
+}
+
+@keyframes startup-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 body {

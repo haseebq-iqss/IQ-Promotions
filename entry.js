@@ -8,7 +8,10 @@ const create_window = () => {
     });
 
     win.loadFile("client/views/index.html");
-    win.maximize();
+    const animation_timeout = setTimeout(() => {
+        win.maximize();
+        return clearTimeout(animation_timeout);
+    }, 1750);
 
     // -- for dev mode
     // win.webContents.openDevTools();
