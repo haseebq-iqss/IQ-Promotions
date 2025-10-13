@@ -61,13 +61,56 @@
             </div>
         </div>
 
+        <div class="calculator-section">
+            <div class="calculator-header" onclick="toggleCalculator()">
+                <h2>Score Calculator</h2>
+                <span class="collapse-icon" id="calc-icon">▼</span>
+            </div>
+            <div class="calculator-card" id="calculator-content">
+                <div class="calculator-grid">
+                    <div class="calc-group">
+                        <label>Aptitude Test Score</label>
+                        <div class="calc-inputs">
+                            <input type="number" id="ap_cor" placeholder="Correct (Ap)" step="0.01">
+                            <input type="number" id="ap_neg" placeholder="Negative (Ap)" step="0.01">
+                        </div>
+                    </div>
+                    <div class="calc-group">
+                        <label>Domain Test Score</label>
+                        <div class="calc-inputs">
+                            <input type="number" id="dom_cor" placeholder="Correct (Dom)" step="0.01">
+                            <input type="number" id="dom_neg" placeholder="Negative (Dom)" step="0.01">
+                        </div>
+                    </div>
+                    <div class="calc-group">
+                        <label>Organizational Test Score</label>
+                        <div class="calc-inputs">
+                            <input type="number" id="org_cor" placeholder="Correct (Org)" step="0.01">
+                            <input type="number" id="org_neg" placeholder="Negative (Org)" step="0.01">
+                        </div>
+                    </div>
+                </div>
+                <div class="calc-result">
+                    <div class="result-display">
+                        <label>Final Score:</label>
+                        <div class="result-value">
+                            <span id="calc-result">0.00</span>
+                            <button class="copy-btn" onclick="copyResult()" title="Copy result">
+                                <span>📋</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="upload-section">
             <h2>File Upload</h2>
             <div class="file-grid">
                 <div class="file-upload" id="q2-upload">
                     <input type="file" id="q2-file" accept=".csv,.xlsx,.xls,.xlsm,.ods" />
                     <label for="q2-file">
-                    <div class="upload-icon">📊</div>
+                        <div class="upload-icon">📊</div>
                         <strong>Q1 Performance Data</strong>
                         <span>Click to upload CSV/Excel/ODS file</span>
                     </label>

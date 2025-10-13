@@ -11,3 +11,9 @@
 1. Change "Tenure as on Jan 01" to "Tenure as on 1st day of the quarter".
 2. Move 1 level up .. start from p2 to m2
 3. Open app as full screen
+
+1. Make a new filed with the formula and name it "Online Test Calculator (PII only)"
+
+1. Check calculations for which some fields, it is taking for comp and performce (take goal, comp) not final scores
+2. Dont round off any scores (2 digit).
+3. Check if the last 2 (2, 3) are taken in consideration as COMP
