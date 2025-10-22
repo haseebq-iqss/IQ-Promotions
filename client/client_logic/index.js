@@ -184,9 +184,9 @@ document.addEventListener("DOMContentLoaded", () => {
         uploadArea.classList.add("file-uploaded")
 
         // Update the content inside the label to show file uploaded
-        const uploadContent = uploadArea.querySelector(".upload-content")
-        if (uploadContent) {
-          uploadContent.innerHTML = `<strong>${file.name}</strong><span>✅ File uploaded successfully</span>`
+        const label = uploadArea.querySelector("label")
+        if (label) {
+          label.innerHTML = `<div class="upload-icon">✅</div><strong>${file.name}</strong><span>File uploaded successfully</span>`
         }
 
         checkAllFilesUploaded()
